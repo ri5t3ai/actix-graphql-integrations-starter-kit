@@ -1,0 +1,155 @@
+{
+  "main": {
+    "id": "15f58c38c142657d",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ac125936df3fb24",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c25fb1902ace2deb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/clients/shopify/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "13b8cf88025354f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "860b25b367859286",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8790b4dcef32bddb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "00fe76668e7493d7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ae01dc32800648d3",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3c6bd0f8453ce15a",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9cdf3601d6738b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f3bfde43365d5970",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/clients/shopify/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a4f8a5c32387bf66",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/clients/shopify/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "79687d4260409fe3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "b8862b5c0b5a0aa1",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/clients/shopify/README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "c25fb1902ace2deb",
+  "lastOpenFiles": [
+    "README.md",
+    "src/clients/shopify/README.md"
+  ]
+}
