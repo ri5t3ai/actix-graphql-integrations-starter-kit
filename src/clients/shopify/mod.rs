@@ -4,7 +4,7 @@ use reqwest::Response;
 
 use crate::{structs::utils::ReadJsonTreeSteps, utils::{retry_async, read_json_tree}};
 
-use self::types::{Shopify, ShopifyAPIError};
+use self::types::{Shopify, ShopifyAPIError, Product};
 
 
 impl Shopify {
@@ -90,6 +90,34 @@ impl Shopify {
 
         Ok(response_json)
     }
+
+pub async fn sync_products(&self) -> Result<Vec<serde_json::Value>, ShopifyAPIError> {
+    let query = "query {
+        products {
+            edges {
+                node {
+                    id
+                    title
+                    handle
+                }
+            }
+        }
+    }";
+
+    let variables = &();
+    let json_finder = vec![
+        ReadJsonTreeSteps::Index(1),
+        ReadJsonTreeSteps::Key("products"),
+        ReadJsonTreeSteps::Key("edges"),
+    ];
+
+    let response_json = self
+        .graphql_query(query, variables, &json_finder)
+        .await?;
+
+    Ok(response_json)
+}
+
 }
 
 async fn shopify_graphql_query<VariablesType, ReturnType>(

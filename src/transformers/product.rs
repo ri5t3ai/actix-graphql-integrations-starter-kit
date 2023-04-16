@@ -1,6 +1,6 @@
 use serde_json::Value;
 
-use crate::{ clients::shopify::types::Product as ShopifyProduct, structs::{products::CharlesProduct, utils::ShopSystem}};
+use crate::{ clients::shopify::types::Product as ShopifyProduct, structs::{products::CustomProduct, utils::ShopSystem}};
 
 
 
@@ -9,12 +9,12 @@ struct ProductTransformer {
 }
 
 impl ProductTransformer {
-       fn normalize(&self, payload: &str, shop_system: ShopSystem) -> Result<CharlesProduct, String> {
+    pub async fn normalize(&self, payload: Value, shop_system: ShopSystem) -> Result<CustomProduct, String> {
         match shop_system {
             ShopSystem::Shopify => {
-                let product: ShopifyProduct = serde_json::from_str(payload).map_err(|e| e.to_string())?;
+                let product: ShopifyProduct = serde_json::from_value(payload).map_err(|e| e.to_string())?;
 
-                Ok(CharlesProduct {
+                Ok(CustomProduct {
                      id: "1".to_string(),
                      platform: "Shopify".to_string(),
                     title: product.title,
@@ -25,9 +25,9 @@ impl ProductTransformer {
                 })
             }
             ShopSystem::PrestaShop => {
-                let product: ShopifyProduct = serde_json::from_str(payload).map_err(|e| e.to_string())?;
+                let product: ShopifyProduct = serde_json::from_value(payload).map_err(|e| e.to_string())?;
 
-                Ok(CharlesProduct {
+                Ok(CustomProduct {
                      id: "1".to_string(),
                      platform: "Shopify".to_string(),
                     title: product.title,
@@ -39,9 +39,9 @@ impl ProductTransformer {
                 })
             },
                 ShopSystem::BigCommerce => {
-                let product: ShopifyProduct = serde_json::from_str(payload).map_err(|e| e.to_string())?;
+                let product: ShopifyProduct = serde_json::from_value(payload).map_err(|e| e.to_string())?;
 
-                Ok(CharlesProduct {
+                Ok(CustomProduct {
                          id: "1".to_string(),
                      platform: "Shopify".to_string(),
                     title: product.title,
@@ -54,9 +54,9 @@ impl ProductTransformer {
             }
             ,
                 ShopSystem::WooCommerce => {
-                let product: ShopifyProduct = serde_json::from_str(payload).map_err(|e| e.to_string())?;
+                let product: ShopifyProduct = serde_json::from_value(payload).map_err(|e| e.to_string())?;
 
-                Ok(CharlesProduct {
+                Ok(CustomProduct {
                         id: "1".to_string(),
                      platform: "Shopify".to_string(),
                     title: product.title,
@@ -70,9 +70,9 @@ impl ProductTransformer {
             }
             ,
                 ShopSystem::Shopware => {
-                let product: ShopifyProduct = serde_json::from_str(payload).map_err(|e| e.to_string())?;
+                let product: ShopifyProduct = serde_json::from_value(payload).map_err(|e| e.to_string())?;
 
-                Ok(CharlesProduct {
+                Ok(CustomProduct {
                 id: "1".to_string(),
                      platform: "Shopify".to_string(),
                     title: product.title,
@@ -86,7 +86,7 @@ impl ProductTransformer {
         }
     }
 
-    // define a translate function that takes in the CharlesProcut and returns a platform specific product based on the platform field
+    // define a translate function that takes in the CustomProcut and returns a platform specific product based on the platform field
     fn _translate(&self, payload: serde_json::Value, shop_system: ShopSystem) -> Result<ShopifyProduct, String> {
 //     let id = payload.id.clone();
 // let id_i64: i64 = match id.parse() {

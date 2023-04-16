@@ -1,11 +1,11 @@
-use crate::structs::products::CharlesProduct;
+use crate::structs::products::CustomProduct;
 
 
 mod product;
 mod order;
 
 
-fn _transformer_control(payload: &str) -> Result<CharlesProduct, serde_json::Error> {
+fn _transformer_control(payload: &str) -> Result<CustomProduct, serde_json::Error> {
     let json_payload: serde_json::Value = serde_json::from_str(payload)?;
     let id = json_payload["id"].as_u64().unwrap() as u32;
     let title = json_payload["title"].as_str().unwrap();
@@ -25,7 +25,7 @@ fn _transformer_control(payload: &str) -> Result<CharlesProduct, serde_json::Err
         None => "Prestashop"
     };
 
-    Ok(CharlesProduct {
+    Ok(CustomProduct {
         platform: platform.to_string(),
         id: id.to_string(),
         title: title.to_string(),

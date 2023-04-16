@@ -14,6 +14,14 @@ pub struct UserId {
     pub _id: String,
 }
 
+
+#[derive(InputObject)]
+pub struct SyncShopifyProductsInput {
+    pub shop: String,
+    pub api_key: String,
+}
+
+
 //project schema
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, Enum)]
 pub enum Status {
